@@ -1,27 +1,30 @@
 import java.math.BigDecimal;
-import java.math.MathContext;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
 /**
  * Created by coura on 16.05.2016.
  */
-public class Parser {
+
+class Parser {
     private final String OPERATORS = "+-*/^";
     private Stack<String> stackOperations = new Stack<>();
     private Stack<String> stackRPN = new Stack<>();
 
+    protected Stack<String> parsing(String inputExpression) {
+        //Проверка на ошибки
+        Errors errors = new Errors();
+        errors.checkErrors(inputExpression);
 
-    protected Stack<String> parsing(String InputExpression) {
         stackOperations.clear();
         stackRPN.clear();
 
-        InputExpression = InputExpression.replace(" ", "").replace("(-", "(0-");
-        if (InputExpression.charAt(0) == '-') {
-            InputExpression = "0" + InputExpression;
+        inputExpression = inputExpression.replace(" ", "").replace("(-", "(0-");
+        if (inputExpression.charAt(0) == '-') {
+            inputExpression = "0" + inputExpression;
         }
 
-        StringTokenizer expressionTokenizer = new StringTokenizer(InputExpression, OPERATORS + "()", true);
+        StringTokenizer expressionTokenizer = new StringTokenizer(inputExpression, OPERATORS + "()", true);
 
         while (expressionTokenizer.hasMoreTokens()) {
             String token = expressionTokenizer.nextToken();
