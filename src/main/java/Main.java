@@ -13,9 +13,9 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String inputExpression = reader.readLine();
-        Parser lightCalculator = new Parser();
+        Arithmetic arithmetic = new Arithmetic();
 
-        BigDecimal result = lightCalculator.calculation(inputExpression);
+        BigDecimal result = arithmetic.calculation(inputExpression);
         System.out.println(result);
 
     }
