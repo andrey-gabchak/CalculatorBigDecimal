@@ -1,6 +1,4 @@
-/**
- * Created by coura on 18.05.2016.
- */
+
 public class Errors {
     public void checkErrors(String inputExpression) {
         char[] inputToCharArray = inputExpression.toCharArray();

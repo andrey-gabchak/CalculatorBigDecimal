@@ -3,9 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.math.BigDecimal;
 
-/**
- * Created by coura on 13.05.2016.
- */
+
 public class Main {
 
 

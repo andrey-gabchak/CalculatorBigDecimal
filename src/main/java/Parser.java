@@ -2,9 +2,6 @@ import java.math.BigDecimal;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
-/**
- * Created by coura on 16.05.2016.
- */
 
 class Parser {
     private final String OPERATORS = "+-*/^";

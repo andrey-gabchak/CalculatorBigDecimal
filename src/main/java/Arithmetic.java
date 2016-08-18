@@ -2,9 +2,6 @@ import java.math.BigDecimal;
 import java.math.MathContext;
 import java.util.Stack;
 
-/**
- * Created by coura on 18.05.2016.
- */
 
 public class Arithmetic {
     private Stack<BigDecimal> stackResult = new Stack<>();
