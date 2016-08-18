@@ -11,7 +11,7 @@ public class Errors {
         }
 
         for (int i = 0; i < inputToCharArray.length; i++) {
-            if (!isDigit(inputToCharArray[i]) && !isOperationSign(inputToCharArray[i])) {
+            if (!isDigit(inputToCharArray[i]) && !isOperationSign(inputToCharArray[i]) && !isBracket(inputToCharArray[i])) {
                 throw new RuntimeException("Не корректный ввод!");
             }
             if (isOperationSign(inputToCharArray[i]) && isOperationSign(inputToCharArray[i + 1])
@@ -58,7 +58,7 @@ public class Errors {
     /**
      * является ли симвом арифметической операцией
      */
-    private static boolean isOperationSign(final char c) {
+    private boolean isOperationSign(final char c) {
         return "+-*/^".indexOf(c) != -1;
     }
 
@@ -66,7 +66,17 @@ public class Errors {
     /**
      * является ли симвом цифрой
      */
-    private static boolean isDigit(final char c) {
+    private boolean isDigit(final char c) {
         return "0123456789.".indexOf(c) != -1;
+    }
+
+    /**
+    * Is it a bracket?
+    * */
+    private boolean isBracket(final char c) {
+        if (String.valueOf(c).equals(")") || String.valueOf(c).equals("(")) {
+            return true;
+        }
+        return false;
     }
 }
