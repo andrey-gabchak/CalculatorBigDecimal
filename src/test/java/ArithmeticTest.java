@@ -15,8 +15,8 @@ public class ArithmeticTest {
 
     @Test
     public void simpleCalculation() {
-        String inputExpression = "1+2*(3/4)";
-        BigDecimal expected = new BigDecimal(2.50);
+        String inputExpression = "1+2*(8/4)";
+        BigDecimal expected = new BigDecimal(5);
 
         Assert.assertEquals(expected, arithmetic.calculation(inputExpression));
     }
